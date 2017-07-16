@@ -1,0 +1,3 @@
+[submodule "lib/Stepper"]
+	path = lib/Stepper
+	url = https://github.com/arduino-libraries/Stepper

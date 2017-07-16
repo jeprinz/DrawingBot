@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Stepper.h>
 
 class Coil{
 public:
@@ -27,17 +28,17 @@ private:
 
 
 void setup(){
-  Serial.begin(9600);
-  Coil coil1(8,9), coil2(10,11);
+  Stepper stepper(512,8,9,10,11);
+  stepper.setSpeed(10);
+  // Stepper stepper(32,10,11,8,9);
 
-  while(1){
-    // coil1.on1();
-    coil2.on1();
-    delay(50);
-    // coil1.on2();
-    coil2.on2();
-    delay(50);
-  }
+  stepper.step(512 * 6);
+
+  // while (1){
+    // stepper.step(512);
+    // stepper.step(-512);
+  // }
+
 }
 
 void loop(){
